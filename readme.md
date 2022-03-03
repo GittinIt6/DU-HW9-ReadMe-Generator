@@ -46,6 +46,8 @@ Root Directory
 
 >**requireJS**: This site uses requireJS <https://requirejs.org/>
 
+![video of the application at work](./git-files/DU-HW9-GIF.gif)
+
 ## Revision History 
 
 1. This application was created in March 2022 as part of a bootcamp assignment. It was created using starter code provided by the instructor.

@@ -54,10 +54,22 @@ const questions = [
         default:'e-mail me',
     },
     {
+        type: 'input',
+        message: "What is your e-mail address?",
+        name: 'email',
+        default:'email@email.com',
+    },
+    {
         type: 'list',
         message: "Choose a license:",
         name: 'license',
         choices:['None','MIT License','Apache License 2.0','GNU General Public License 2.0','Other'],
+    },
+    {
+        type: 'input',
+        message: "What is your GitHub user name?",
+        name: 'git',
+        default:'mytestuser',
     },
 ];
 
@@ -81,11 +93,22 @@ function init() {
         // response.confirm === response.password,
         // console.log(response)
         // let names = questions.map(({ name }) => name).join(', ');
-        const { title, description, instructions, userType, techKnowledge, technologies, revHistory, contribute, license } = response;
+        const { title, description, instructions, userType, techKnowledge, technologies, revHistory, contribute, email, license, git } = response;
         let readmeData = 
 `# ${title}
 ## Description
 ${description}
+
+## Table of Contents
+-[Description](#description)<br>
+-[Instructions](#instructions)<br>
+-[Intended Audience](#audience)<br>
+-[Tech](#technologies-used)<br>
+-[Revisions](#revision-history)<br>
+-[Contribute](#contribute)<br>
+-[Contact](#contact)<br>
+-[License](#license)
+
 ## Instructions
 ${instructions}
 
@@ -94,12 +117,21 @@ ${instructions}
 Intended audience: ${userType}
 Should the user of this site need to have a technical background: ${techKnowledge}
 ~~~
+
 ## Technologies Used
 >${technologies.join(' | ')}
+
 ## Revision History 
 *${revHistory}*
+
 ### **Contribute**
 To contribute, please ${contribute}.
+
+### Contact
+You can email me at <${email}>
+
+Please see my GitHub profile at <https://www.github.com/${git}>
+
 ### License
 ${license}`;
 
@@ -107,5 +139,5 @@ ${license}`;
     });
 };
 
-// Function call to initialize app
+//initialize app
 init();
