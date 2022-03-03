@@ -8,14 +8,14 @@ This is a node.js script that will generate a file on the local filesystem of th
 Github Repository Address: <https://github.com/GittinIt6/DU-HW9-ReadMe-Generator>
 
 ## Instructions
-Clone repository to your system.
-From a terminal, ensure you are in the index.js directory
-Run:
+1. Clone repository to your system.
+2. From a terminal, ensure you are in the index.js directory
+3. Run:
 ~~~
 npm i
 node index.js
 ~~~
-A rendered output of readme.md will be saved into your **output** directory
+4. A rendered output of readme.md will be saved into your **output** directory
 
 ## Purpose
 
@@ -40,10 +40,10 @@ Root Directory
       --your rendered readme.md
 ```
 >**node.js**: This site uses node.js
->**FS**: This site uses node.js built in FS
->**requireJS**: This site uses requireJS <https://requirejs.org/>
 
-The following image shows a screenshot of the website homepage:
+>**FS**: This site uses node.js built in FS
+
+>**requireJS**: This site uses requireJS <https://requirejs.org/>
 
 ## Revision History 
 
