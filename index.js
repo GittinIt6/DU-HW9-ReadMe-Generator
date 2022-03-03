@@ -1,8 +1,8 @@
-// TODO: Include packages needed for this application
+//Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
 
-// TODO: Create an array of questions for user input
+//Create an array of questions for user input
 
 const questions = [
     {
@@ -54,14 +54,14 @@ const questions = [
         default:'e-mail me',
     },
     {
-        type: 'checkbox',
+        type: 'list',
         message: "Choose a license:",
         name: 'license',
         choices:['None','MIT License','Apache License 2.0','GNU General Public License 2.0','Other'],
     },
 ];
 
-// TODO: Create a function to write README file
+//Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(`./output/${fileName}`, data, (err) => {
         if (err)
@@ -73,7 +73,7 @@ function writeToFile(fileName, data) {
         };
     });
 };
-// TODO: Create a function to initialize app
+//Create a function to initialize app
 function init() {
     inquirer
     .prompt(questions)
@@ -88,18 +88,22 @@ function init() {
 ${description}
 ## Instructions
 ${instructions}
-## Audience
-Intended audience:${userType}
+
+### Audience
+~~~
+Intended audience: ${userType}
 Should the user of this site need to have a technical background: ${techKnowledge}
+~~~
 ## Technologies Used
-${technologies}
+>${technologies.join(' | ')}
 ## Revision History 
-${revHistory}
-## Contribute
-To contribut, please ${contribute}.
-## License
+*${revHistory}*
+### **Contribute**
+To contribute, please ${contribute}.
+### License
 ${license}`;
-        writeToFile("readme.md", readmeData);
+
+    writeToFile("readme.md", readmeData);
     });
 };
 
